@@ -4,7 +4,7 @@ Pareto Frontier
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-The [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_efficiency), or Pareto set, is the set of choices which optimizes a system. This package calculates the optimal set of points in a 2D system.
+The [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_efficiency), or Pareto set, is the set of choices which optimizes a system. This package calculates the optimal set of points in a multi-dimensional system.
 
 For a given system, the Pareto frontier or Pareto set is the set of parameterizations (allocations) that are all Pareto efficient. Finding Pareto frontiers is particularly useful in engineering. By yielding all of the potentially optimal solutions, a designer can make focused tradeoffs within this constrained set of parameters, rather than needing to consider the full ranges of parameters.
 
