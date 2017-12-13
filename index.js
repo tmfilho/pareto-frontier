@@ -1,10 +1,10 @@
 'use strict';
 
-const multiDimensionalComparator = (a, b, dimensionMaximization) => {
+const multiDimensionalComparator = (a, b, maximizeDimension) => {
 	let result = 0;
 	let countNegative = 0;
 	let countPositive = 0;
-	dimensionMaximization.forEach(function(value, index) {
+	maximizeDimension.forEach(function(value, index) {
 		if (b[index] < a[index] && value) {
 			countNegative++;
 		} else if (b[index] > a[index] && !value) {
@@ -28,8 +28,8 @@ const pointComparators = Object.freeze({
 	topLeft: (a, b) => multiDimensionalComparator(a, b, [false, true]),
 	bottomRight: (a, b) => multiDimensionalComparator(a, b, [true, false]),
 	bottomLeft: (a, b) => multiDimensionalComparator(a, b, [false, false]),
-	multiDimensional: (a, b, dimensionMaximization) => multiDimensionalComparator(a, b,
-		dimensionMaximization),
+	multiDimensional: (a, b, maximizeDimension) => multiDimensionalComparator(a, b,
+		maximizeDimension),
 });
 
 const getParetoFrontier = (points, options) => {
@@ -45,7 +45,7 @@ const getParetoFrontier = (points, options) => {
 		let j = 0;
 		while (!foundBetter && j < n) {
 			if (i !== j) {
-				if (pointComparator(points[i], points[j], options ? options.dimensionMaximization : null) > 0) {
+				if (pointComparator(points[i], points[j], options ? options.maximizeDimension : null) > 0) {
 					foundBetter = true;
 				}
 			}

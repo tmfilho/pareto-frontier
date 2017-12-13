@@ -102,56 +102,56 @@ describe('pareto-frontier-3d', function tests() {
 	it('should calculate the pareto frontier for maxMaxMax', function test() {
 		expect(paretoFrontier.getParetoFrontier(graph, {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [true, true, true]
+			maximizeDimension: [true, true, true]
 		})).to.deep.equal(expected);
 	});
 
 	it('should calculate the pareto frontier for maxMaxMin', function test() {
 		expect(paretoFrontier.getParetoFrontier(reflectGraph(graph, false, false, true), {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [true, true, false]
+			maximizeDimension: [true, true, false]
 		})).to.deep.equal(reflectGraph(expected, false, false, true));
 	});
 
 	it('should calculate the pareto frontier for maxMinMax', function test() {
 		expect(paretoFrontier.getParetoFrontier(reflectGraph(graph, false, true, false), {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [true, false, true]
+			maximizeDimension: [true, false, true]
 		})).to.deep.equal(reflectGraph(expected, false, true, false));
 	});
 
 	it('should calculate the pareto frontier for maxMinMin', function test() {
 		expect(paretoFrontier.getParetoFrontier(reflectGraph(graph, false, true, true), {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [true, false, false]
+			maximizeDimension: [true, false, false]
 		})).to.deep.equal(reflectGraph(expected, false, true, true));
 	});
 
 	it('should calculate the pareto frontier for minMaxMax', function test() {
 		expect(paretoFrontier.getParetoFrontier(reflectGraph(graph, true, false, false), {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [false, true, true]
+			maximizeDimension: [false, true, true]
 		})).to.deep.equal(reflectGraph(expected, true, false, false));
 	});
 
 	it('should calculate the pareto frontier for minMaxMin', function test() {
 		expect(paretoFrontier.getParetoFrontier(reflectGraph(graph, true, false, true), {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [false, true, false]
+			maximizeDimension: [false, true, false]
 		})).to.deep.equal(reflectGraph(expected, true, false, true));
 	});
 
 	it('should calculate the pareto frontier for minMinMax', function test() {
 		expect(paretoFrontier.getParetoFrontier(reflectGraph(graph, true, true, false), {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [false, false, true]
+			maximizeDimension: [false, false, true]
 		})).to.deep.equal(reflectGraph(expected, true, true, false));
 	});
 
 	it('should calculate the pareto frontier for minMinMin', function test() {
 		expect(paretoFrontier.getParetoFrontier(reflectGraph(graph, true, true, true), {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [false, false, false]
+			maximizeDimension: [false, false, false]
 		})).to.deep.equal(reflectGraph(expected, true, true, true));
 	});
 
@@ -161,7 +161,7 @@ describe('pareto-frontier-3d', function tests() {
 		]);
 		expect(paretoFrontier.getParetoFrontier(graphWithData, {
 			optimize: 'multiDimensional',
-			dimensionMaximization: [true, true, true]
+			maximizeDimension: [true, true, true]
 		})).to.deep.equal(expected.concat([
 			[72, 73, 55, 'green', 100]
 		]));
